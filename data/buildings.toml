@@ -1,0 +1,7 @@
+[logging_camps]
+name = "Logging Camps"
+inputs = []
+
+[[logging_camps.outputs]]
+resource_id = "wood"
+quantity = 30
