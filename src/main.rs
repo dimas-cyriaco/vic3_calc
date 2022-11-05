@@ -5,27 +5,17 @@ fn main() {
     let resources_filename = "data/resources.toml";
 
     let resources_file_content = match fs::read_to_string(resources_filename) {
-        // If successful return the files text as `contents`.
-        // `c` is a local variable.
         Ok(c) => c,
-        // Handle the `error` case.
         Err(_) => {
-            // Write `msg` to `stderr`.
             eprintln!("Could not read file `{}`", resources_filename);
-            // Exit the program with exit code `1`.
             exit(1);
         }
     };
 
     let resources: HashMap<&str, Resource> = match toml::from_str(&resources_file_content) {
-        // If successful, return data as `Data` struct.
-        // `d` is a local variable.
         Ok(d) => d,
-        // Handle the `error` case.
         Err(_) => {
-            // Write `msg` to `stderr`.
             eprintln!("Unable to load data from `{}`", resources_filename);
-            // Exit the program with exit code `1`.
             exit(1);
         }
     };
@@ -33,33 +23,23 @@ fn main() {
     let buildings_filename = "data/buildings.toml";
 
     let buildings_file_content = match fs::read_to_string(buildings_filename) {
-        // If successful return the files text as `contents`.
-        // `c` is a local variable.
         Ok(c) => c,
-        // Handle the `error` case.
         Err(_) => {
-            // Write `msg` to `stderr`.
             eprintln!("Could not read file `{}`", buildings_filename);
-            // Exit the program with exit code `1`.
             exit(1);
         }
     };
 
     let buildings: HashMap<&str, Building> = match toml::from_str(&buildings_file_content) {
-        // If successful, return data as `Data` struct.
-        // `d` is a local variable.
         Ok(d) => d,
-        // Handle the `error` case.
         Err(e) => {
-            // Write `msg` to `stderr`.
             eprintln!("Unable to load data from `{}`", buildings_filename);
             dbg!(e);
-            // Exit the program with exit code `1`.
             exit(1);
         }
     };
 
-    let deficit = 10;
+    let deficit = 15;
 
     let suggestions: Vec<Suggestion> = get_suggestions("wood", deficit, &resources, &buildings);
 
