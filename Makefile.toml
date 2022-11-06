@@ -1,0 +1,24 @@
+[tasks.check]
+command = "cargo"
+args = ["check"]
+
+[tasks.test]
+command = "cargo"
+args = ["test", "--quiet"]
+
+[tasks.lint]
+command = "cargo"
+args = ["clippy", "--all", "--", "--W", "clippy::pedantic"]
+
+[tasks.dev]
+command = "cargo"
+args = [
+  "watch",
+  "-x",
+  "check",
+  "-x",
+  "test",
+  "--quiet",
+  "-x",
+  "clippy --all -- --W clippy::pedantic",
+]
