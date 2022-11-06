@@ -23,11 +23,10 @@ pub fn get_suggestions<'a>(
     buildings
         .iter()
         .filter(|(_, building)| {
-            building.outputs.iter().any(|output| {
-                dbg!(output.resource_id.clone());
-                dbg!(resource_id);
-                output.resource_id == resource_id
-            })
+            building
+                .outputs
+                .iter()
+                .any(|output| output.resource_id == resource_id)
         })
         .map(|(_, building)| {
             let output_quantity = building
