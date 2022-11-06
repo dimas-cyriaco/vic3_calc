@@ -27,7 +27,7 @@ fn main() {
     println!("To resolve your {} problem you can build:", args.resource);
 
     for suggestion in suggestions {
-        println!("\t* {}: {}", suggestion.solution.name, suggestion.quantity);
+        println!("\t* {}: {}", suggestion.solution, suggestion.quantity);
     }
 }
 

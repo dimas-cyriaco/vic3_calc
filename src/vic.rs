@@ -1,48 +1,32 @@
+use fake::{Dummy, Fake};
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, PartialEq, Eq, Deserialize, Serialize)]
+#[derive(Debug, Default, Dummy, Clone, PartialEq, Eq, Deserialize, Serialize)]
 pub struct Resource {
+    #[dummy(faker = "16..32")]
+    pub id: String,
     pub name: String,
 }
-beaver::define! {
-    pub ResourceFactory (Resource) {
-        name -> |_| String::from("Wood"),
-    }
-}
 
-#[derive(Clone, Debug, Eq, PartialEq, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Dummy, Eq, PartialEq, Deserialize, Serialize)]
 pub struct Input {
     pub resource_id: String,
+    #[dummy(faker = "10..20")]
     pub quantity: u32,
 }
 
-#[derive(Clone, Debug, Eq, PartialEq, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Dummy, Eq, PartialEq, Deserialize, Serialize)]
 pub struct Output {
     pub resource_id: String,
+    #[dummy(faker = "10..20")]
     pub quantity: u32,
 }
 
-#[derive(Clone, Debug, Eq, PartialEq, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Dummy, Eq, PartialEq, Deserialize, Serialize)]
 pub struct Building {
+    #[dummy(faker = "16..32")]
+    pub id: String,
     pub name: String,
     pub inputs: Vec<Input>,
     pub outputs: Vec<Output>,
-}
-beaver::define! {
-    pub BuildingFactory (Building) {
-        name -> |_| String::from("Wood"),
-        inputs -> |_| Vec::new(),
-        outputs -> |_| {
-            let mut vec = Vec::new();
-
-            let output = Output {
-                resource_id: String::from("wood"),
-                quantity: 1,
-            };
-
-            vec.push(output);
-
-            vec
-        },
-    }
 }
