@@ -14,19 +14,17 @@ fn main() {
 }
 
 fn load_data<T: for<'a> Deserialize<'a>>(filename: &str) -> HashMap<String, T> {
-    let resources_file_content = match fs::read_to_string(filename) {
-        Ok(c) => c,
-        Err(_) => {
-            eprintln!("Could not read file `{}`", filename);
-            exit(1);
-        }
+    let resources_file_content = if let Ok(d) = fs::read_to_string(filename) {
+        d
+    } else {
+        eprintln!("Could not read file `{}`", filename);
+        exit(1);
     };
 
-    match toml::from_str(&resources_file_content) {
-        Ok(d) => d,
-        Err(_) => {
-            eprintln!("Unable to load data from `{}`", filename);
-            exit(1);
-        }
+    if let Ok(d) = toml::from_str(&resources_file_content) {
+        d
+    } else {
+        eprintln!("Unable to load data from `{}`", filename);
+        exit(1);
     }
 }

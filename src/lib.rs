@@ -12,11 +12,12 @@ pub struct Suggestion<'a> {
     pub quantity: usize,
 }
 
-pub fn get_suggestions<'a>(
+/// # Panics
+pub fn get_suggestions<'a, S: ::std::hash::BuildHasher>(
     resource_id: &str,
     deficit: u32,
-    resources: &'a HashMap<String, Resource>,
-    buildings: &'a HashMap<String, Building>,
+    resources: &'a HashMap<String, Resource, S>,
+    buildings: &'a HashMap<String, Building, S>,
 ) -> Vec<Suggestion<'a>> {
     let wood = resources.get(resource_id).unwrap();
 
