@@ -15,8 +15,8 @@ pub struct Suggestion<'a> {
 pub fn get_suggestions<'a>(
     resource_id: &str,
     deficit: u32,
-    resources: &'a HashMap<&str, Resource>,
-    buildings: &'a HashMap<&str, Building>,
+    resources: &'a HashMap<String, Resource>,
+    buildings: &'a HashMap<String, Building>,
 ) -> Vec<Suggestion<'a>> {
     let wood = resources.get(resource_id).unwrap();
 
@@ -65,8 +65,8 @@ mod tests {
         let wood = resource_factory.build(|_| {});
         let logging_camp = building_factory.build(|_| {});
 
-        let resources = HashMap::from([(&resource_id[0..], wood.clone())]);
-        let buildings = HashMap::from([("logging_camp", logging_camp.clone())]);
+        let resources = HashMap::from([(resource_id.clone(), wood.clone())]);
+        let buildings = HashMap::from([(String::from("logging_camp"), logging_camp.clone())]);
 
         let deficit = 3;
 
