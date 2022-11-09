@@ -8,7 +8,9 @@ edition = "2021"
 [dependencies]
 beaver = "1.0.0"
 clap = { version = "4.0.19", features = ["derive"] }
-fake = { verstion = "2.5.0", features = ["derive"] }
+color-eyre = "0.6.2"
+fake = { version = "2.5.0", features = ["derive"] }
 rand = "0.8.5"
 serde = { version = "1.0.147", features = ["derive"] }
+serde_yaml = "0.9.14"
 toml = "0.5.9"

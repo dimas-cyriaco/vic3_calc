@@ -1,0 +1,29 @@
+clippers:
+  name: Clippers
+
+clothes:
+  name: Clothes
+
+coffee:
+  name: Coffee
+
+fabric:
+  name: Fabric
+
+fish:
+  name: Fish
+
+furniture:
+  name: Furniture
+
+grain:
+  name: Grain
+
+groceries:
+  name: Groceries
+
+tools:
+  name: Tools
+
+wood:
+  name: Wood

@@ -1,0 +1,142 @@
+coffee_plantations:
+  name: Coffee Plantations
+  inputs: []
+  outputs:
+    - resource_id: coffee
+      quantity: 20
+
+cotton_plantations:
+  name: Cotton Plantations
+  inputs: []
+  outputs:
+    - resource_id: fabric
+      quantity: 40
+
+fishing_wharves:
+  name: Fishing Wharves
+  inputs:
+    - resource_id: clippers
+      quantity: 5
+  outputs:
+    - resource_id: fish
+      quantity: 50
+
+food_industries:
+  name: Food Industries
+  inputs:
+    - resource_id: grain
+      quantity: 40
+  outputs:
+    - resource_id: groceries
+      quantity: 45
+
+furniture_manufacturies:
+  name: Furniture Manufacturies
+  inputs:
+    - resource_id: fabric
+      quantity: 10
+    - resource_id: wood
+      quantity: 30
+  outputs:
+    - resource_id: furniture
+      quantity: 45
+
+livestock_ranches:
+  name: Livestock Ranches
+  inputs: []
+  outputs:
+    - resource_id: fabric
+      quantity: 25
+    - resource_id: meat
+      quantity: 5
+
+logging_camps:
+  name: Logging Camps
+  inputs: []
+  outputs:
+    - resource_id: wood
+      quantity: 30
+
+maize_farms:
+  name: Maize Farms
+  inputs: []
+  outputs:
+    - resource_id: grain
+      quantity: 30
+
+millet_farms:
+  name: Millet Farms
+  inputs: []
+  outputs:
+    - resource_id: grain
+      quantity: 30
+
+port:
+  name: Port
+  outputs: []
+  inputs:
+    - resource_id: clippers
+      quantity: 5
+
+rice_farms:
+  name: Rice Farms
+  inputs: []
+  outputs:
+    - resource_id: grain
+      quantity: 35
+
+rye_farms:
+  name: Rye Farms
+  inputs: []
+  outputs:
+    - resource_id: grain
+      quantity: 30
+
+shipyards:
+  name: Shipyards
+  inputs:
+    - resource_id: fabric
+      quantity: 20
+    - resource_id: wood
+      quantity: 40
+  outputs:
+    - resource_id: man_o_wars
+      quantity: 15
+    - resource_id: clippers
+      quantity: 20
+
+textile_mills:
+  name: Textile Mills
+  inputs:
+    - resource_id: fabric
+      quantity: 40
+  outputs:
+    - resource_id: clothes
+      quantity: 45
+
+tooling_workshop:
+  name: Tooling Workshop
+  inputs:
+    - resource_id: wood
+      quantity: 30
+  outputs:
+    - resource_id: tools
+      quantity: 30
+
+whaling_stations:
+  name: Whaling Stations
+  inputs:
+    - resource_id: clippers
+      quantity: 5
+  outputs:
+    - resource_id: oil
+      quantity: 15
+    - resource_id: meet
+      quantity: 15
+
+wheat_farms:
+  name: Wheat Farms
+  inputs: []
+  outputs:
+    - resource_id: grain
+      quantity: 30

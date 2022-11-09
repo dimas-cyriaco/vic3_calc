@@ -17,8 +17,8 @@ args = [
   "-x",
   "check",
   "-x",
+  "clippy --all -- --W clippy::pedantic",
+  "-x",
   "test",
   "--quiet",
-  "-x",
-  "clippy --all -- --W clippy::pedantic",
 ]
